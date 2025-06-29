@@ -121,20 +121,20 @@ const SignupForm: React.FC = () => {
               ))}
             </div>
 
-            {/* Social proof */}
+            {/* Social proof - Updated with Vietnamese student avatars */}
             <div className="mt-12 p-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-white/20 dark:border-gray-700/20">
               <div className="flex items-center space-x-4">
                 <div className="flex -space-x-2">
                   {[
-                    'https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=50',
-                    'https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=50',
-                    'https://images.pexels.com/photos/3762811/pexels-photo-3762811.jpeg?auto=compress&cs=tinysrgb&w=50',
-                    'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=50'
+                    'https://images.pexels.com/photos/8199562/pexels-photo-8199562.jpeg?auto=compress&cs=tinysrgb&w=50',
+                    'https://images.pexels.com/photos/8199565/pexels-photo-8199565.jpeg?auto=compress&cs=tinysrgb&w=50',
+                    'https://images.pexels.com/photos/8199563/pexels-photo-8199563.jpeg?auto=compress&cs=tinysrgb&w=50',
+                    'https://images.pexels.com/photos/8199564/pexels-photo-8199564.jpeg?auto=compress&cs=tinysrgb&w=50'
                   ].map((avatar, i) => (
                     <img
                       key={i}
                       src={avatar}
-                      alt={`User ${i + 1}`}
+                      alt={`Sinh viên ${i + 1}`}
                       className="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800 object-cover"
                     />
                   ))}

@@ -25,10 +25,10 @@ const VideoDemo: React.FC = () => {
         <div className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
           {!isPlaying ? (
             <>
-              {/* Video Thumbnail */}
+              {/* Video Thumbnail - Updated with Vietnamese students */}
               <img
-                src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Video demo EduFocus"
+                src="https://images.pexels.com/photos/8199568/pexels-photo-8199568.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Video demo EduFocus - Sinh viên Việt Nam"
                 className="w-full h-full object-cover"
               />
               

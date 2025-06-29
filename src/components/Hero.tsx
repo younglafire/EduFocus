@@ -62,14 +62,14 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Content - Simple Image */}
+          {/* Right Content - Updated with Vietnamese student images */}
           <div className="relative animate-fade-in-right">
             <div className="relative">
               {/* Main Image Container */}
               <div className="relative rounded-2xl overflow-hidden shadow-xl bg-white p-4">
                 <img
-                  src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Sinh viên học tập thông minh"
+                  src="https://images.pexels.com/photos/8199562/pexels-photo-8199562.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Sinh viên Việt Nam học tập thông minh"
                   className="w-full h-auto rounded-xl"
                 />
                 
