@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, User, GraduationCap, Eye, EyeOff, ArrowRight, BookOpen, CheckCircle, Gift, AlertCircle } from 'lucide-react';
+import { useAuth } from '../../contexts/AuthContext';
 
 const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
+  const { register } = useAuth();
+  
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -76,16 +79,20 @@ const RegisterPage: React.FC = () => {
     if (!validateForm()) return;
 
     setIsLoading(true);
+    setErrors({});
     
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Registration attempt:', formData);
-      // Handle successful registration here
-      navigate('/login');
-    } catch (error) {
-      console.error('Registration error:', error);
-      setErrors({ general: 'Đăng ký thất bại. Vui lòng thử lại.' });
+      await register({
+        fullName: formData.fullName,
+        email: formData.email,
+        password: formData.password,
+        school: formData.school
+      });
+      
+      // Redirect to home page after successful registration
+      navigate('/', { replace: true });
+    } catch (error: any) {
+      setErrors({ general: error.message || 'Đăng ký thất bại. Vui lòng thử lại.' });
     } finally {
       setIsLoading(false);
     }

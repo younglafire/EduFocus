@@ -1,7 +1,28 @@
 import React from 'react';
 import { ArrowRight, Play, BookOpen, Users, Trophy, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
+
+  const handleStartLearning = () => {
+    if (isAuthenticated) {
+      navigate('/tools');
+    } else {
+      navigate('/register');
+    }
+  };
+
+  const handleWatchDemo = () => {
+    // Scroll to video demo section or open modal
+    const videoSection = document.getElementById('video-demo');
+    if (videoSection) {
+      videoSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen bg-white dark:bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
@@ -33,12 +54,18 @@ const Hero: React.FC = () => {
 
             {/* Clean CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors font-poppins flex items-center justify-center">
-                <span>Bắt đầu miễn phí</span>
+              <button 
+                onClick={handleStartLearning}
+                className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors font-poppins flex items-center justify-center"
+              >
+                <span>{isAuthenticated ? 'Vào học ngay' : 'Bắt đầu miễn phí'}</span>
                 <ArrowRight className="h-5 w-5 ml-2" />
               </button>
               
-              <button className="px-8 py-4 border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-blue-300 hover:text-blue-600 transition-colors font-poppins flex items-center justify-center">
+              <button 
+                onClick={handleWatchDemo}
+                className="px-8 py-4 border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-blue-300 hover:text-blue-600 transition-colors font-poppins flex items-center justify-center"
+              >
                 <Play className="h-5 w-5 mr-2" />
                 <span>Xem Demo</span>
               </button>
@@ -62,7 +89,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Content - Updated with Vietnamese student images */}
+          {/* Right Content - Simple Image */}
           <div className="relative animate-fade-in-right">
             <div className="relative">
               {/* Main Image Container */}

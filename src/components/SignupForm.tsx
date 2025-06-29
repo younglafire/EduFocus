@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Mail, User, GraduationCap, ArrowRight, CheckCircle, Gift, Zap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const SignupForm: React.FC = () => {
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,12 +15,23 @@ const SignupForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', school: '' });
-    }, 3000);
+    
+    if (isAuthenticated) {
+      // If already logged in, redirect to tools
+      navigate('/tools');
+      return;
+    }
+    
+    // If not logged in, redirect to register page with pre-filled data
+    navigate('/register', { 
+      state: { 
+        prefillData: {
+          fullName: formData.name,
+          email: formData.email,
+          school: formData.school
+        }
+      }
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,6 +59,41 @@ const SignupForm: React.FC = () => {
     }
   ];
 
+  // If user is already authenticated, show different content
+  if (isAuthenticated) {
+    return (
+      <section className="py-32 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-green-900/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-2xl">
+            <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="h-10 w-10 text-white" />
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Bạn đã là thành viên EduFocus! 🎉
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              Hãy tiếp tục hành trình học tập của bạn với các công cụ thông minh
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                onClick={() => navigate('/tools')}
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+              >
+                Vào học ngay
+              </button>
+              <button 
+                onClick={() => navigate('/courses')}
+                className="px-8 py-4 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold rounded-2xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300"
+              >
+                Khám phá khóa học
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   if (isSubmitted) {
     return (
       <section className="py-32 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-green-900/20">
@@ -59,10 +109,16 @@ const SignupForm: React.FC = () => {
               Tài khoản của bạn đã được tạo thành công. Chúng tôi đã gửi email xác nhận và hướng dẫn bắt đầu.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+              <button 
+                onClick={() => navigate('/tools')}
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+              >
                 Bắt đầu học ngay
               </button>
-              <button className="px-8 py-4 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold rounded-2xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300">
+              <button 
+                onClick={() => navigate('/courses')}
+                className="px-8 py-4 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold rounded-2xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300"
+              >
                 Khám phá tính năng
               </button>
             </div>
@@ -238,13 +294,13 @@ const SignupForm: React.FC = () => {
 
                 <p className="text-center text-sm text-gray-500 dark:text-gray-400">
                   Bằng cách đăng ký, bạn đồng ý với{' '}
-                  <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+                  <button type="button" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
                     Điều khoản sử dụng
-                  </a>{' '}
+                  </button>{' '}
                   và{' '}
-                  <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+                  <button type="button" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
                     Chính sách bảo mật
-                  </a>
+                  </button>
                 </p>
               </form>
             </div>

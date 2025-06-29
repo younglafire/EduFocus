@@ -1,20 +1,31 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff, ArrowRight, BookOpen, CheckCircle, AlertCircle } from 'lucide-react';
+import { useAuth } from '../../contexts/AuthContext';
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { login } = useAuth();
+  
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
+    rememberMe: false
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<{[key: string]: string}>({});
 
+  // Get the page user was trying to access before login
+  const from = location.state?.from?.pathname || '/';
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({ 
+      ...prev, 
+      [name]: type === 'checkbox' ? checked : value 
+    }));
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -46,16 +57,15 @@ const LoginPage: React.FC = () => {
     if (!validateForm()) return;
 
     setIsLoading(true);
+    setErrors({});
     
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Login attempt:', formData);
-      // Handle successful login here
-      navigate('/');
-    } catch (error) {
-      console.error('Login error:', error);
-      setErrors({ general: 'Đăng nhập thất bại. Vui lòng thử lại.' });
+      await login(formData.email, formData.password);
+      
+      // Redirect to the page they were trying to access, or home
+      navigate(from, { replace: true });
+    } catch (error: any) {
+      setErrors({ general: error.message || 'Đăng nhập thất bại. Vui lòng thử lại.' });
     } finally {
       setIsLoading(false);
     }
@@ -163,6 +173,13 @@ const LoginPage: React.FC = () => {
               </p>
             </div>
 
+            {/* Demo credentials info */}
+            <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-xl">
+              <p className="text-sm text-blue-700 dark:text-blue-300 font-inter">
+                <strong>Demo:</strong> Sử dụng bất kỳ email và mật khẩu nào để đăng nhập thử nghiệm
+              </p>
+            </div>
+
             {errors.general && (
               <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-xl flex items-center space-x-3">
                 <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
@@ -232,6 +249,9 @@ const LoginPage: React.FC = () => {
                 <label className="flex items-center">
                   <input
                     type="checkbox"
+                    name="rememberMe"
+                    checked={formData.rememberMe}
+                    onChange={handleChange}
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <span className="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">Ghi nhớ đăng nhập</span>

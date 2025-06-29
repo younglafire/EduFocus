@@ -44,7 +44,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           
           if (now < expiryDate) {
             // Session is still valid
-            setUser(JSON.parse(savedUser));
+            const userData = JSON.parse(savedUser);
+            // Ensure joinedAt is a Date object
+            userData.joinedAt = new Date(userData.joinedAt);
+            setUser(userData);
           } else {
             // Session expired, clear storage
             localStorage.removeItem('edufocus_user');
@@ -71,6 +74,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
       
+      // Mock authentication - in real app, validate credentials with your API
+      if (email === 'demo@edufocus.vn' && password === 'demo123') {
+        throw new Error('Email hoặc mật khẩu không chính xác');
+      }
+      
       // Mock user data - in real app, this would come from your API
       const userData: User = {
         id: '1',
@@ -91,7 +99,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
       setUser(userData);
     } catch (error) {
-      throw new Error('Đăng nhập thất bại. Vui lòng kiểm tra lại email và mật khẩu.');
+      throw error;
     } finally {
       setIsLoading(false);
     }
