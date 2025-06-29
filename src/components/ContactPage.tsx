@@ -40,7 +40,7 @@ const ContactPage: React.FC = () => {
     {
       icon: MapPin,
       title: 'Địa chỉ',
-      details: 'Tầng 10, Tòa nhà ABC, 123 Đường XYZ, Hà Nội',
+      details: 'Hồ Chí Minh, Việt Nam',
       description: 'Văn phòng chính của chúng tôi',
       color: 'bg-red-500'
     },
