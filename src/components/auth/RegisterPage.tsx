@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Mail, Lock, User, GraduationCap, Eye, EyeOff, ArrowRight, BookOpen, CheckCircle, Gift } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Mail, Lock, User, GraduationCap, Eye, EyeOff, ArrowRight, BookOpen, CheckCircle, Gift, AlertCircle } from 'lucide-react';
 
 const RegisterPage: React.FC = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -81,9 +82,10 @@ const RegisterPage: React.FC = () => {
       await new Promise(resolve => setTimeout(resolve, 2000));
       console.log('Registration attempt:', formData);
       // Handle successful registration here
-      alert('Đăng ký thành công! Vui lòng kiểm tra email để xác thực tài khoản.');
+      navigate('/login');
     } catch (error) {
       console.error('Registration error:', error);
+      setErrors({ general: 'Đăng ký thất bại. Vui lòng thử lại.' });
     } finally {
       setIsLoading(false);
     }
@@ -103,7 +105,7 @@ const RegisterPage: React.FC = () => {
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
         
         {/* Left Side - Branding & Benefits */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block animate-fade-in-left">
           <div className="text-center lg:text-left">
             <Link to="/" className="inline-flex items-center mb-8 group">
               <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
@@ -123,7 +125,7 @@ const RegisterPage: React.FC = () => {
 
             <div className="space-y-4 mb-8">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-3">
+                <div key={index} className="flex items-center space-x-3 animate-fade-in-up" style={{ animationDelay: `${0.1 * index}s` }}>
                   <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
                     <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
                   </div>
@@ -132,7 +134,7 @@ const RegisterPage: React.FC = () => {
               ))}
             </div>
 
-            <div className="p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl border border-purple-200/50 dark:border-purple-700/50">
+            <div className="p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl border border-purple-200/50 dark:border-purple-700/50 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center">
                   <Gift className="h-6 w-6 text-white" />
@@ -153,7 +155,7 @@ const RegisterPage: React.FC = () => {
         </div>
 
         {/* Right Side - Register Form */}
-        <div className="w-full max-w-md mx-auto lg:mx-0">
+        <div className="w-full max-w-md mx-auto lg:mx-0 animate-fade-in-right">
           <div className="bg-white dark:bg-gray-800 py-12 px-8 shadow-2xl rounded-3xl border border-gray-100 dark:border-gray-700">
             
             {/* Mobile Logo */}
@@ -176,6 +178,13 @@ const RegisterPage: React.FC = () => {
                 Tạo tài khoản để bắt đầu học tập
               </p>
             </div>
+
+            {errors.general && (
+              <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-xl flex items-center space-x-3">
+                <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
+                <span className="text-red-700 dark:text-red-400 font-inter">{errors.general}</span>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Mail, Lock, Eye, EyeOff, ArrowRight, BookOpen, CheckCircle } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Mail, Lock, Eye, EyeOff, ArrowRight, BookOpen, CheckCircle, AlertCircle } from 'lucide-react';
 
 const LoginPage: React.FC = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -51,9 +52,10 @@ const LoginPage: React.FC = () => {
       await new Promise(resolve => setTimeout(resolve, 2000));
       console.log('Login attempt:', formData);
       // Handle successful login here
-      alert('Đăng nhập thành công!');
+      navigate('/');
     } catch (error) {
       console.error('Login error:', error);
+      setErrors({ general: 'Đăng nhập thất bại. Vui lòng thử lại.' });
     } finally {
       setIsLoading(false);
     }
@@ -71,7 +73,7 @@ const LoginPage: React.FC = () => {
       <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center">
         
         {/* Left Side - Branding & Benefits */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block animate-fade-in-left">
           <div className="text-center lg:text-left">
             <Link to="/" className="inline-flex items-center mb-8 group">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
@@ -91,7 +93,7 @@ const LoginPage: React.FC = () => {
 
             <div className="space-y-4">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-3">
+                <div key={index} className="flex items-center space-x-3 animate-fade-in-up" style={{ animationDelay: `${0.1 * index}s` }}>
                   <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
                     <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
                   </div>
@@ -100,7 +102,7 @@ const LoginPage: React.FC = () => {
               ))}
             </div>
 
-            <div className="mt-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-200/50 dark:border-blue-700/50">
+            <div className="mt-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-200/50 dark:border-blue-700/50 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
               <div className="flex items-center space-x-4">
                 <div className="flex -space-x-2">
                   {[
@@ -137,7 +139,7 @@ const LoginPage: React.FC = () => {
         </div>
 
         {/* Right Side - Login Form */}
-        <div className="w-full max-w-md mx-auto lg:mx-0">
+        <div className="w-full max-w-md mx-auto lg:mx-0 animate-fade-in-right">
           <div className="bg-white dark:bg-gray-800 py-12 px-8 shadow-2xl rounded-3xl border border-gray-100 dark:border-gray-700">
             
             {/* Mobile Logo */}
@@ -160,6 +162,13 @@ const LoginPage: React.FC = () => {
                 Đăng nhập để tiếp tục học tập
               </p>
             </div>
+
+            {errors.general && (
+              <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-xl flex items-center space-x-3">
+                <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
+                <span className="text-red-700 dark:text-red-400 font-inter">{errors.general}</span>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
