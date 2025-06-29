@@ -15,9 +15,9 @@ const Header: React.FC = () => {
 
   const navItems = [
     { path: '/', label: 'Trang chủ' },
-    { path: '/tools', label: 'Công cụ học tập', protected: true },
-    { path: '/courses', label: 'Khóa học', protected: true },
-    { path: '/resources', label: 'Tài nguyên', protected: true },
+    { path: '/tools', label: 'Công cụ học tập' },
+    { path: '/courses', label: 'Khóa học' },
+    { path: '/resources', label: 'Tài nguyên' },
     { path: '/blog', label: 'Blog' },
     { path: '/contact', label: 'Liên hệ' }
   ];
@@ -27,14 +27,6 @@ const Header: React.FC = () => {
       navigate(-1);
     } else {
       navigate('/');
-    }
-  };
-
-  const handleNavClick = (path: string, isProtected: boolean) => {
-    if (isProtected && !isAuthenticated) {
-      navigate('/login');
-    } else {
-      navigate(path);
     }
   };
 
@@ -65,23 +57,20 @@ const Header: React.FC = () => {
           
           <nav className="hidden md:flex items-center space-x-8 animate-fade-in">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.path}
-                onClick={() => handleNavClick(item.path, item.protected || false)}
+                to={item.path}
                 className={`text-sm font-medium font-poppins transition-all duration-300 relative group ${
                   location.pathname === item.path
                     ? 'text-primary-600 dark:text-primary-400'
                     : 'text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400'
-                } ${item.protected && !isAuthenticated ? 'opacity-75' : ''}`}
+                }`}
               >
                 {item.label}
-                {item.protected && !isAuthenticated && (
-                  <span className="ml-1 text-xs text-orange-500">🔒</span>
-                )}
                 <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full ${
                   location.pathname === item.path ? 'w-full' : ''
                 }`}></span>
-              </button>
+              </Link>
             ))}
           </nav>
 

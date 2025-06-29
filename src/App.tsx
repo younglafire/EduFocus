@@ -12,6 +12,7 @@ import BlogPage from './components/BlogPage';
 import ContactPage from './components/ContactPage';
 import LoginPage from './components/auth/LoginPage';
 import RegisterPage from './components/auth/RegisterPage';
+import CourseDetailPage from './components/CourseDetailPage';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -40,21 +41,14 @@ function App() {
                     <Header />
                     <Routes>
                       <Route path="/" element={<LandingPage />} />
-                      <Route path="/tools" element={
+                      <Route path="/tools" element={<ToolsPage />} />
+                      <Route path="/courses" element={<CoursesPage />} />
+                      <Route path="/courses/:id" element={
                         <ProtectedRoute>
-                          <ToolsPage />
+                          <CourseDetailPage />
                         </ProtectedRoute>
                       } />
-                      <Route path="/courses" element={
-                        <ProtectedRoute>
-                          <CoursesPage />
-                        </ProtectedRoute>
-                      } />
-                      <Route path="/resources" element={
-                        <ProtectedRoute>
-                          <ResourcesPage />
-                        </ProtectedRoute>
-                      } />
+                      <Route path="/resources" element={<ResourcesPage />} />
                       <Route path="/blog" element={<BlogPage />} />
                       <Route path="/contact" element={<ContactPage />} />
                     </Routes>

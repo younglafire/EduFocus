@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { BookOpen, Clock, Users, Star, Filter, Search, Play, Award, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 interface Course {
   id: string;
@@ -114,6 +116,8 @@ const categories = ['Tất cả', 'Lập trình', 'Ngoại ngữ', 'Thiết kế
 const levels = ['Tất cả', 'Cơ bản', 'Trung cấp', 'Nâng cao'];
 
 const CoursesPage: React.FC = () => {
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Tất cả');
   const [selectedLevel, setSelectedLevel] = useState('Tất cả');
@@ -132,6 +136,14 @@ const CoursesPage: React.FC = () => {
   const formatPrice = (price: number) => {
     if (price === 0) return 'Miễn phí';
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+  };
+
+  const handleCourseClick = (courseId: string) => {
+    if (isAuthenticated) {
+      navigate(`/courses/${courseId}`);
+    } else {
+      navigate('/login', { state: { from: { pathname: `/courses/${courseId}` } } });
+    }
   };
 
   return (
@@ -244,8 +256,9 @@ const CoursesPage: React.FC = () => {
           {filteredCourses.map((course, index) => (
             <div
               key={course.id}
-              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 overflow-hidden animate-scale-in"
+              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 overflow-hidden animate-scale-in cursor-pointer"
               style={{ animationDelay: `${0.1 * index}s` }}
+              onClick={() => handleCourseClick(course.id)}
             >
               {/* Course Image */}
               <div className="relative overflow-hidden">
@@ -336,7 +349,9 @@ const CoursesPage: React.FC = () => {
 
                 {/* CTA Button */}
                 <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center group font-poppins">
-                  <span className="mr-2">Xem chi tiết</span>
+                  <span className="mr-2">
+                    {isAuthenticated ? 'Xem chi tiết' : 'Đăng nhập để xem'}
+                  </span>
                   <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -365,7 +380,10 @@ const CoursesPage: React.FC = () => {
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto font-inter">
             Liên hệ với chúng tôi để được tư vấn khóa học phù hợp nhất với nhu cầu của bạn
           </p>
-          <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-2xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg font-poppins">
+          <button 
+            onClick={() => navigate('/contact')}
+            className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-2xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg font-poppins"
+          >
             Liên hệ tư vấn
           </button>
         </div>
