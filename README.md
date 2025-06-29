@@ -14,6 +14,7 @@ EduFocus là một nền tảng học tập hiện đại được thiết kế 
 ## 🛠️ Công nghệ sử dụng
 
 - **Frontend**: React 18 + TypeScript
+- **Routing**: React Router DOM
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
 - **Charts**: Chart.js + React Chart.js 2
@@ -108,7 +109,8 @@ Dự án này được phân phối dưới MIT License. Xem `LICENSE` để bi�
 
 - Website: [https://edufocus.vn](https://frabjous-peony-f2c201.netlify.app)
 - Email: support@edufocus.vn
-- Phone: (024) 1234-5678
+- Phone: (028) 1234-5678
+- Địa chỉ: Hồ Chí Minh, Việt Nam
 
 ## 🙏 Cảm ơn
 

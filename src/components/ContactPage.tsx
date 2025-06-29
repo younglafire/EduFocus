@@ -33,7 +33,7 @@ const ContactPage: React.FC = () => {
     {
       icon: Phone,
       title: 'Điện thoại',
-      details: '(024) 1234-5678',
+      details: '(028) 1234-5678',
       description: 'Hotline hỗ trợ 24/7',
       color: 'bg-green-500'
     },
@@ -75,7 +75,7 @@ const ContactPage: React.FC = () => {
     },
     {
       question: 'Làm thế nào để liên hệ hỗ trợ kỹ thuật?',
-      answer: 'Bạn có thể liên hệ qua email support@edufocus.vn hoặc gọi hotline (024) 1234-5678.'
+      answer: 'Bạn có thể liên hệ qua email support@edufocus.vn hoặc gọi hotline (028) 1234-5678.'
     }
   ];
 
