@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Moon, Sun, Focus, ArrowLeft } from 'lucide-react';
+import { BookOpen, Moon, Sun, Focus, ArrowLeft, LogIn, UserPlus } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import { useApp } from '../contexts/AppContext';
@@ -94,10 +94,25 @@ const Header: React.FC = () => {
             >
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
-            
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-xl font-medium font-poppins hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-glow animate-shimmer bg-size-200">
-              Bắt đầu học
-            </button>
+
+            {/* Auth buttons */}
+            <div className="flex items-center space-x-2">
+              <Link
+                to="/login"
+                className="flex items-center space-x-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium font-poppins"
+              >
+                <LogIn className="h-4 w-4" />
+                <span className="hidden sm:inline">Đăng nhập</span>
+              </Link>
+              
+              <Link
+                to="/register"
+                className="flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl font-medium font-poppins hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-glow"
+              >
+                <UserPlus className="h-4 w-4" />
+                <span className="hidden sm:inline">Đăng ký</span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
