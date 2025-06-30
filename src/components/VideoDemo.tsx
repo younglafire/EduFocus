@@ -13,10 +13,10 @@ const VideoDemo: React.FC = () => {
             <span>🎬 Video Demo</span>
           </div>
           
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 font-poppins">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 font-be-vietnam">
             Khám phá <span className="text-blue-600">EduFocus</span> trong 2 phút
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-nunito">
             Xem cách EduFocus giúp hàng nghìn sinh viên học tập hiệu quả
           </p>
         </div>
@@ -44,8 +44,8 @@ const VideoDemo: React.FC = () => {
 
               {/* Video Info */}
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                <div className="text-sm font-semibold text-gray-900">Giới thiệu EduFocus 2024</div>
-                <div className="text-xs text-gray-600">2:15 phút</div>
+                <div className="text-sm font-semibold text-gray-900 font-be-vietnam">Giới thiệu EduFocus 2024</div>
+                <div className="text-xs text-gray-600 font-nunito">2:15 phút</div>
               </div>
             </>
           ) : (
@@ -53,7 +53,7 @@ const VideoDemo: React.FC = () => {
             <div className="w-full h-full bg-gray-900 flex items-center justify-center">
               <div className="text-center text-white">
                 <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4 mx-auto"></div>
-                <p>Đang tải video...</p>
+                <p className="font-nunito">Đang tải video...</p>
               </div>
             </div>
           )}
@@ -76,8 +76,8 @@ const VideoDemo: React.FC = () => {
             }
           ].map((item, index) => (
             <div key={index} className="text-center">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 font-poppins">{item.title}</h3>
-              <p className="text-gray-600 font-inter">{item.description}</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 font-be-vietnam">{item.title}</h3>
+              <p className="text-gray-600 font-nunito">{item.description}</p>
             </div>
           ))}
         </div>

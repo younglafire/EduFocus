@@ -5,8 +5,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
+        'be-vietnam': ['Be Vietnam Pro', 'sans-serif'],
+        'nunito': ['Nunito', 'sans-serif'],
+        'sans': ['Be Vietnam Pro', 'Nunito', 'system-ui', 'sans-serif'],
       },
       colors: {
         primary: {

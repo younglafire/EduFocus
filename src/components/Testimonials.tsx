@@ -74,10 +74,10 @@ const Testimonials: React.FC = () => {
             <span>⭐ Câu chuyện thành công</span>
           </div>
           
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 font-poppins">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 font-be-vietnam">
             Sinh viên nói gì về <span className="text-blue-600">EduFocus?</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-inter">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-nunito">
             Hàng nghìn sinh viên đã thay đổi cuộc đời và đạt được ước mơ nhờ EduFocus
           </p>
         </div>
@@ -96,16 +96,16 @@ const Testimonials: React.FC = () => {
                     <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="text-2xl font-bold text-gray-900">5.0</span>
+                <span className="text-2xl font-bold text-gray-900 font-be-vietnam">5.0</span>
               </div>
               
               {/* Quote */}
-              <blockquote className="text-gray-700 mb-6 leading-relaxed italic font-inter">
+              <blockquote className="text-gray-700 mb-6 leading-relaxed italic font-nunito">
                 "{testimonial.quote}"
               </blockquote>
 
               {/* Achievement Badge */}
-              <div className={`inline-flex items-center px-3 py-1 ${testimonial.achievementColor} text-white rounded-full text-sm font-medium mb-4`}>
+              <div className={`inline-flex items-center px-3 py-1 ${testimonial.achievementColor} text-white rounded-full text-sm font-medium mb-4 font-nunito`}>
                 <span>{testimonial.achievement}</span>
               </div>
 
@@ -117,13 +117,13 @@ const Testimonials: React.FC = () => {
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h4 className="font-bold text-gray-900 font-poppins">
+                  <h4 className="font-bold text-gray-900 font-be-vietnam">
                     {testimonial.name}
                   </h4>
-                  <p className="text-gray-600 text-sm font-inter">
+                  <p className="text-gray-600 text-sm font-nunito">
                     {testimonial.role}
                   </p>
-                  <p className="text-blue-600 text-sm font-medium font-inter">
+                  <p className="text-blue-600 text-sm font-medium font-nunito">
                     {testimonial.school}
                   </p>
                 </div>
@@ -134,13 +134,13 @@ const Testimonials: React.FC = () => {
 
         {/* Simple CTA */}
         <div className="text-center mt-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4 font-poppins">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 font-be-vietnam">
             Bạn cũng muốn có câu chuyện thành công như vậy?
           </h3>
-          <p className="text-gray-600 mb-8 font-inter">
+          <p className="text-gray-600 mb-8 font-nunito">
             Hãy bắt đầu hành trình học tập của bạn ngay hôm nay
           </p>
-          <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors font-poppins">
+          <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors font-be-vietnam">
             Bắt đầu miễn phí
           </button>
         </div>

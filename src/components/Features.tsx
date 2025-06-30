@@ -50,10 +50,10 @@ const Features: React.FC = () => {
             <span>✨ Tính năng vượt trội</span>
           </div>
           
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 font-poppins">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 font-be-vietnam">
             Tại sao chọn <span className="text-blue-600">EduFocus?</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-inter">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-nunito">
             Chúng tôi mang đến trải nghiệm học tập hoàn toàn mới với công nghệ tiên tiến 
             và phương pháp giảng dạy hiệu quả nhất
           </p>
@@ -81,10 +81,10 @@ const Features: React.FC = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3 font-poppins">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 font-be-vietnam">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed font-inter">
+              <p className="text-gray-600 leading-relaxed font-nunito">
                 {feature.description}
               </p>
             </div>
@@ -93,7 +93,7 @@ const Features: React.FC = () => {
 
         {/* Simple CTA */}
         <div className="text-center mt-16">
-          <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors font-poppins">
+          <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors font-be-vietnam">
             Trải nghiệm ngay
           </button>
         </div>

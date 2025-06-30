@@ -49,7 +49,7 @@ const Header: React.FC = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mr-3 animate-glow">
                 <BookOpen className="h-6 w-6 text-white" />
               </div>
-              <span className="text-2xl font-bold font-poppins bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold font-be-vietnam bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 EduFocus
               </span>
             </Link>
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium font-poppins transition-all duration-300 relative group ${
+                className={`text-sm font-medium font-be-vietnam transition-all duration-300 relative group ${
                   location.pathname === item.path
                     ? 'text-primary-600 dark:text-primary-400'
                     : 'text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400'
@@ -121,10 +121,10 @@ const Header: React.FC = () => {
                     className="w-8 h-8 rounded-full object-cover border-2 border-blue-200 dark:border-blue-700"
                   />
                   <div className="hidden sm:block text-left">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white font-poppins">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white font-be-vietnam">
                       Xin chào, {getFirstName(user.fullName)}!
                     </p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 font-inter">
+                    <p className="text-xs text-gray-500 dark:text-gray-400 font-nunito">
                       {user.school}
                     </p>
                   </div>
@@ -142,10 +142,10 @@ const Header: React.FC = () => {
                           className="w-10 h-10 rounded-full object-cover"
                         />
                         <div>
-                          <p className="font-semibold text-gray-900 dark:text-white font-poppins">
+                          <p className="font-semibold text-gray-900 dark:text-white font-be-vietnam">
                             {user.fullName}
                           </p>
-                          <p className="text-sm text-gray-500 dark:text-gray-400 font-inter">
+                          <p className="text-sm text-gray-500 dark:text-gray-400 font-nunito">
                             {user.email}
                           </p>
                         </div>
@@ -153,11 +153,11 @@ const Header: React.FC = () => {
                     </div>
                     
                     <div className="py-2">
-                      <button className="w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-3 font-inter">
+                      <button className="w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-3 font-nunito">
                         <User className="h-4 w-4" />
                         <span>Hồ sơ cá nhân</span>
                       </button>
-                      <button className="w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-3 font-inter">
+                      <button className="w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-3 font-nunito">
                         <Settings className="h-4 w-4" />
                         <span>Cài đặt</span>
                       </button>
@@ -166,7 +166,7 @@ const Header: React.FC = () => {
                     <div className="border-t border-gray-200 dark:border-gray-700 py-2">
                       <button
                         onClick={handleLogout}
-                        className="w-full px-4 py-2 text-left text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors flex items-center space-x-3 font-inter"
+                        className="w-full px-4 py-2 text-left text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors flex items-center space-x-3 font-nunito"
                       >
                         <LogOut className="h-4 w-4" />
                         <span>Đăng xuất</span>
@@ -179,7 +179,7 @@ const Header: React.FC = () => {
               <div className="flex items-center space-x-2">
                 <Link
                   to="/login"
-                  className="flex items-center space-x-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium font-poppins"
+                  className="flex items-center space-x-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium font-be-vietnam"
                 >
                   <LogIn className="h-4 w-4" />
                   <span className="hidden sm:inline">Đăng nhập</span>
@@ -187,7 +187,7 @@ const Header: React.FC = () => {
                 
                 <Link
                   to="/register"
-                  className="flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl font-medium font-poppins hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-glow"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl font-medium font-be-vietnam hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-glow"
                 >
                   <UserPlus className="h-4 w-4" />
                   <span className="hidden sm:inline">Đăng ký</span>

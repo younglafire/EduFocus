@@ -14,10 +14,10 @@ const TrustedBy: React.FC = () => {
     <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 font-poppins">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 font-be-vietnam">
             Được tin tưởng bởi sinh viên từ 100+ trường đại học
           </h2>
-          <p className="text-gray-600 font-inter">
+          <p className="text-gray-600 font-nunito">
             Hàng nghìn sinh viên từ các trường đại học uy tín đang sử dụng EduFocus
           </p>
         </div>
@@ -29,7 +29,7 @@ const TrustedBy: React.FC = () => {
               className="text-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="text-2xl mb-2">{university.logo}</div>
-              <h3 className="text-sm font-medium text-gray-900 font-poppins">
+              <h3 className="text-sm font-medium text-gray-900 font-be-vietnam">
                 {university.name}
               </h3>
             </div>
