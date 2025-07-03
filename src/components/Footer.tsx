@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mr-4">
                   <BookOpen className="h-7 w-7 text-white" />
                 </div>
-                <span className="text-2xl font-bold">EduFocus</span>
+                <span className="text-2xl font-bold">Studytools</span>
               </div>
               
               <p className="text-blue-100 mb-8 text-lg leading-relaxed max-w-md">
@@ -141,8 +141,8 @@ const Footer: React.FC = () => {
               <div className="space-y-4 mb-6">
                 <div className="flex items-center text-blue-200">
                   <Mail className="h-5 w-5 mr-3 text-blue-400" />
-                  <a href="mailto:support@edufocus.vn" className="hover:text-white transition-colors">
-                    support@edufocus.vn
+                  <a href="mailto:support@studytools.vn" className="hover:text-white transition-colors">
+                    support@studytools.vn
                   </a>
                 </div>
                 <div className="flex items-center text-blue-200">
@@ -200,7 +200,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/10 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-blue-200 text-sm mb-4 md:mb-0">
-              © 2024 EduFocus. Tất cả quyền được bảo lưu. Made with{' '}
+              © 2024 Studytools. Tất cả quyền được bảo lưu. Made with{' '}
               <Heart className="inline h-4 w-4 text-red-400 mx-1" />
               in Vietnam
             </p>

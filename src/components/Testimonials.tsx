@@ -7,7 +7,7 @@ const testimonials = [
     role: 'Sinh viên năm 3',
     school: 'ĐH Bách Khoa Hà Nội',
     avatar: 'https://images.pexels.com/photos/8199562/pexels-photo-8199562.jpeg?auto=compress&cs=tinysrgb&w=150',
-    quote: 'EduFocus đã thay đổi hoàn toàn cách tôi học tập. Từ một sinh viên bình thường, giờ tôi đã có GPA 3.8 và tự tin hơn rất nhiều trong việc học.',
+    quote: 'Studytools đã thay đổi hoàn toàn cách tôi học tập. Từ một sinh viên bình thường, giờ tôi đã có GPA 3.8 và tự tin hơn rất nhiều trong việc học.',
     rating: 5,
     achievement: 'Tăng GPA từ 2.5 lên 3.8',
     achievementColor: 'bg-blue-500'
@@ -37,7 +37,7 @@ const testimonials = [
     role: 'Thạc sĩ',
     school: 'ĐH Quốc gia Hà Nội',
     avatar: 'https://images.pexels.com/photos/8199564/pexels-photo-8199564.jpeg?auto=compress&cs=tinysrgb&w=150',
-    quote: 'AI của EduFocus đã giúp tôi tìm ra phương pháp học phù hợp nhất. Thời gian chuẩn bị luận văn giảm từ 8 tháng xuống chỉ còn 4 tháng.',
+    quote: 'AI của Studytools đã giúp tôi tìm ra phương pháp học phù hợp nhất. Thời gian chuẩn bị luận văn giảm từ 8 tháng xuống chỉ còn 4 tháng.',
     rating: 5,
     achievement: 'Hoàn thành luận văn sớm 4 tháng',
     achievementColor: 'bg-orange-500'
@@ -47,7 +47,7 @@ const testimonials = [
     role: 'Sinh viên năm 1',
     school: 'ĐH Y Hà Nội',
     avatar: 'https://images.pexels.com/photos/8199566/pexels-photo-8199566.jpeg?auto=compress&cs=tinysrgb&w=150',
-    quote: 'Là sinh viên năm nhất, tôi rất lo lắng về việc học đại học. EduFocus đã giúp tôi thích nghi nhanh chóng và đạt học bổng toàn phần.',
+    quote: 'Là sinh viên năm nhất, tôi rất lo lắng về việc học đại học. Studytools đã giúp tôi thích nghi nhanh chóng và đạt học bổng toàn phần.',
     rating: 5,
     achievement: 'Đạt học bổng toàn phần',
     achievementColor: 'bg-pink-500'
@@ -57,7 +57,7 @@ const testimonials = [
     role: 'Sinh viên năm 3',
     school: 'ĐH Công nghệ',
     avatar: 'https://images.pexels.com/photos/8199567/pexels-photo-8199567.jpeg?auto=compress&cs=tinysrgb&w=150',
-    quote: 'Nhờ EduFocus, tôi đã tự học được 5 ngôn ngữ lập trình và nhận được internship tại Google. Đây thực sự là bước ngoặt trong cuộc đời tôi.',
+    quote: 'Nhờ Studytools, tôi đã tự học được 5 ngôn ngữ lập trình và nhận được internship tại Google. Đây thực sự là bước ngoặt trong cuộc đời tôi.',
     rating: 5,
     achievement: 'Internship tại Google',
     achievementColor: 'bg-indigo-500'
@@ -75,10 +75,10 @@ const Testimonials: React.FC = () => {
           </div>
           
           <h2 className="text-4xl font-bold text-gray-900 mb-6 font-be-vietnam">
-            Sinh viên nói gì về <span className="text-blue-600">EduFocus?</span>
+            Sinh viên nói gì về <span className="text-blue-600">Studytools?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-nunito">
-            Hàng nghìn sinh viên đã thay đổi cuộc đời và đạt được ước mơ nhờ EduFocus
+            Hàng nghìn sinh viên đã thay đổi cuộc đời và đạt được ước mơ nhờ Studytools
           </p>
         </div>
 

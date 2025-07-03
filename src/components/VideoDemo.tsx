@@ -14,10 +14,10 @@ const VideoDemo: React.FC = () => {
           </div>
           
           <h2 className="text-4xl font-bold text-gray-900 mb-6 font-be-vietnam">
-            Khám phá <span className="text-blue-600">EduFocus</span> trong 2 phút
+            Khám phá <span className="text-blue-600">Studytools</span> trong 2 phút
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto font-nunito">
-            Xem cách EduFocus giúp hàng nghìn sinh viên học tập hiệu quả
+            Xem cách Studytools giúp hàng nghìn sinh viên học tập hiệu quả
           </p>
         </div>
 
@@ -28,7 +28,7 @@ const VideoDemo: React.FC = () => {
               {/* Video Thumbnail - Updated with Vietnamese students */}
               <img
                 src="https://images.pexels.com/photos/8199568/pexels-photo-8199568.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Video demo EduFocus - Sinh viên Việt Nam"
+                alt="Video demo Studytools - Sinh viên Việt Nam"
                 className="w-full h-full object-cover"
               />
               
@@ -44,7 +44,7 @@ const VideoDemo: React.FC = () => {
 
               {/* Video Info */}
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                <div className="text-sm font-semibold text-gray-900 font-be-vietnam">Giới thiệu EduFocus 2024</div>
+                <div className="text-sm font-semibold text-gray-900 font-be-vietnam">Giới thiệu Studytools 2024</div>
                 <div className="text-xs text-gray-600 font-nunito">2:15 phút</div>
               </div>
             </>

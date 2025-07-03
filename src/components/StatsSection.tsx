@@ -33,7 +33,7 @@ const StatsSection: React.FC = () => {
             Con số nói lên <span className="text-blue-600">tất cả</span>
           </h2>
           <p className="text-xl text-gray-600 font-nunito">
-            EduFocus đã tạo ra những thay đổi tích cực cho hàng nghìn sinh viên
+            Studytools đã tạo ra những thay đổi tích cực cho hàng nghìn sinh viên
           </p>
         </div>
 

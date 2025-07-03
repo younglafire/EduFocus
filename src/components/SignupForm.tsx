@@ -69,7 +69,7 @@ const SignupForm: React.FC = () => {
               <CheckCircle className="h-10 w-10 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Bạn đã là thành viên EduFocus! 🎉
+              Bạn đã là thành viên Studytools! 🎉
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
               Hãy tiếp tục hành trình học tập của bạn với các công cụ thông minh
@@ -103,7 +103,7 @@ const SignupForm: React.FC = () => {
               <CheckCircle className="h-10 w-10 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Chào mừng bạn đến với EduFocus! 🎉
+              Chào mừng bạn đến với Studytools! 🎉
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
               Tài khoản của bạn đã được tạo thành công. Chúng tôi đã gửi email xác nhận và hướng dẫn bắt đầu.

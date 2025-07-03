@@ -6,13 +6,11 @@ import SignupForm from './SignupForm';
 import Testimonials from './Testimonials';
 import Footer from './Footer';
 import StatsSection from './StatsSection';
-import TrustedBy from './TrustedBy';
 
 const LandingPage: React.FC = () => {
   return (
     <>
       <Hero />
-      <TrustedBy />
       <StatsSection />
       <Features />
       <VideoDemo />

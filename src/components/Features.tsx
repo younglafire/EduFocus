@@ -51,7 +51,7 @@ const Features: React.FC = () => {
           </div>
           
           <h2 className="text-4xl font-bold text-gray-900 mb-6 font-be-vietnam">
-            Tại sao chọn <span className="text-blue-600">EduFocus?</span>
+            Tại sao chọn <span className="text-blue-600">Studytools?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-nunito">
             Chúng tôi mang đến trải nghiệm học tập hoàn toàn mới với công nghệ tiên tiến 

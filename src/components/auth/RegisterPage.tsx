@@ -119,7 +119,7 @@ const RegisterPage: React.FC = () => {
                 <BookOpen className="h-7 w-7 text-white" />
               </div>
               <span className="text-3xl font-bold font-poppins bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                EduFocus
+                Studytools
               </span>
             </Link>
 
@@ -172,7 +172,7 @@ const RegisterPage: React.FC = () => {
                   <BookOpen className="h-6 w-6 text-white" />
                 </div>
                 <span className="text-2xl font-bold font-poppins bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  EduFocus
+                  Studytools
                 </span>
               </Link>
             </div>

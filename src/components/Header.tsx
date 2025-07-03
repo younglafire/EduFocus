@@ -50,7 +50,7 @@ const Header: React.FC = () => {
                 <BookOpen className="h-6 w-6 text-white" />
               </div>
               <span className="text-2xl font-bold font-be-vietnam bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                EduFocus
+                Studytools
               </span>
             </Link>
           </div>

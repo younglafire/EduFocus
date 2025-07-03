@@ -128,36 +128,6 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Simple Course Categories */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-be-vietnam">
-              Khám phá các lĩnh vực học tập
-            </h3>
-            <p className="text-gray-600 font-nunito">
-              Từ lập trình đến kỹ năng mềm, chúng tôi có tất cả
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { name: 'Lập trình', icon: '💻', students: '15K+' },
-              { name: 'Thiết kế', icon: '🎨', students: '8K+' },
-              { name: 'Kinh doanh', icon: '📊', students: '12K+' },
-              { name: 'Ngôn ngữ', icon: '🌍', students: '10K+' }
-            ].map((category, index) => (
-              <div
-                key={index}
-                className="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
-              >
-                <div className="text-3xl mb-3">{category.icon}</div>
-                <h4 className="text-gray-900 font-semibold text-lg mb-2 font-be-vietnam">{category.name}</h4>
-                <p className="text-gray-600 text-sm font-nunito">{category.students} sinh viên</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

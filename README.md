@@ -1,6 +1,6 @@
-# EduFocus - Nền tảng học tập thông minh
+# Studytools - Nền tảng học tập thông minh
 
-EduFocus là một nền tảng học tập hiện đại được thiết kế dành riêng cho sinh viên Việt Nam, giúp tăng hiệu quả học tập lên 300% thông qua AI thông minh và các công cụ học tập tiên tiến.
+Studytools là một nền tảng học tập hiện đại được thiết kế dành riêng cho sinh viên Việt Nam, giúp tăng hiệu quả học tập lên 300% thông qua AI thông minh và các công cụ học tập tiên tiến.
 
 ## 🚀 Tính năng chính
 
@@ -25,8 +25,8 @@ EduFocus là một nền tảng học tập hiện đại được thiết kế 
 
 1. Clone repository:
 ```bash
-git clone https://github.com/yourusername/edufocus.git
-cd edufocus
+git clone https://github.com/yourusername/studytools.git
+cd studytools
 ```
 
 2. Cài đặt dependencies:
@@ -107,14 +107,14 @@ Dự án này được phân phối dưới MIT License. Xem `LICENSE` để bi�
 
 ## 📞 Liên hệ
 
-- Website: [https://edufocus.vn](https://frabjous-peony-f2c201.netlify.app)
-- Email: support@edufocus.vn
+- Website: [https://studytools.vn](https://frabjous-peony-f2c201.netlify.app)
+- Email: support@studytools.vn
 - Phone: (028) 1234-5678
 - Địa chỉ: Hồ Chí Minh, Việt Nam
 
 ## 🙏 Cảm ơn
 
-Cảm ơn tất cả sinh viên đã tin tưởng và sử dụng EduFocus để nâng cao hiệu quả học tập!
+Cảm ơn tất cả sinh viên đã tin tưởng và sử dụng Studytools để nâng cao hiệu quả học tập!
 
 ---
 
